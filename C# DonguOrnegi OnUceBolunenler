@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _13EBolunebilenSayilar
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            List<int> OnUceBolunenler = new List<int>();
+            
+            for(int i = 0; i <100; i++)
+            {
+                if (i % 13 == 0)  //0 dan 100 e kadar tum sayilarin 13 e kalansiz bolunup bolunemedigini kontrol et.
+                { 
+                 OnUceBolunenler.Add(i); //13'e bolunenleri listemize ekle.
+                }
+            }
+
+            ListedekileriSirala(OnUceBolunenler);
+
+            Console.ReadKey();
+        }
+        static void ListedekileriSirala(List<int> liste)
+        {
+
+            var siralanmis =
+                from degerler in liste   //Listenin icindeki degerleri
+                orderby degerler descending  //artandan azalana gore sirala.
+                select degerler;  //Bu degerleri listemiz icin sec.
+
+            foreach(var i in siralanmis)
+            {
+                Console.WriteLine(i);  
+            }
+        }
+
+    }
+}
