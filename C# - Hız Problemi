@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HizProblemleri
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int aracHiz;
+            int yol;
+
+            Console.WriteLine("Aracin hizini giriniz: " );
+            aracHiz = int.Parse(Console.ReadLine());
+            Console.WriteLine("Yolu giriniz: ");
+            yol = int.Parse(Console.ReadLine());
+
+            Console.Write($"{yol} km yol saatte {aracHiz} km hizla {sureyiHesapla(yol,aracHiz)} saatte gidilir");
+
+            Console.ReadKey();
+
+        }
+
+        static double sureyiHesapla(int yol, int aracHiz)
+        {
+            double yolculukSuresi;
+            yolculukSuresi = (double) yol / aracHiz;
+
+            return yolculukSuresi;
+
+        }
+            
+    }
+}
